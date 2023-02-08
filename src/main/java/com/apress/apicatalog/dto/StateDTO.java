@@ -5,7 +5,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
-import java.util.Objects;
 
 @Data
 @AllArgsConstructor
@@ -21,5 +20,7 @@ public class StateDTO implements Serializable {
     private Boolean enabled;
 
     private CountryDTO country;
+
+    private AuditDTO audit;
 
 }

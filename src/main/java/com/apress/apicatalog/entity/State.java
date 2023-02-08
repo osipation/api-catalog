@@ -23,4 +23,7 @@ public class State implements Serializable {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "country_id", nullable = false, updatable = false, insertable = false)
     private Country country;
+
+    @Embedded
+    private Audit audit;
 }

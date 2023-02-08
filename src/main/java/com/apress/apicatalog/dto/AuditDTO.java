@@ -5,19 +5,15 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
-
+import java.time.LocalDateTime;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
-public class CityDTO implements Serializable {
+@AllArgsConstructor
+public class AuditDTO implements Serializable {
 
-    private Long id;
+    private LocalDateTime createdOn;
 
-    private String name;
-
-    private Boolean enabled;
-
-    private AuditDTO audit;
+    private LocalDateTime updatedOn;
 
 }

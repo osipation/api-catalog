@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 import java.util.List;
-import java.util.Objects;
 
 @Entity
 @Table(name = "country")
@@ -34,6 +33,9 @@ public class Country extends Base implements Serializable {
     @JoinColumn(name = "country_id", nullable = false, updatable = false, insertable = false)
     @OrderBy(value = "name")
     private List<State> state;
+
+    @Embedded
+    private Audit audit;
 
 //    @Enumerated(EnumType.STRING)
 //    private Continent continent;

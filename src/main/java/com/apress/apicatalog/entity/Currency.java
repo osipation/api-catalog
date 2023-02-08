@@ -22,4 +22,7 @@ public class Currency extends Base implements Serializable {
 
     @Column(name = "decimal_places")
     private int decimalPlaces;
+
+    @Embedded
+    private Audit audit;
 }

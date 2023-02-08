@@ -6,7 +6,6 @@ import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 import java.util.List;
-import java.util.Objects;
 
 @Data
 @AllArgsConstructor
@@ -28,5 +27,7 @@ public class CountryDTO implements Serializable {
     private CurrencyDTO currency;
 
     private List<StateDTO> state;
+
+    private AuditDTO audit;
 
 }

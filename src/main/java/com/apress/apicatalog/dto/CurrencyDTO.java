@@ -19,4 +19,6 @@ public class CurrencyDTO {
 
     private Integer decimalPlaces;
 
+    private AuditDTO audit;
+
 }
