@@ -3,6 +3,7 @@ package com.apress.apicatalog.entity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
@@ -11,6 +12,7 @@ import java.util.List;
 @Entity
 @Table(name = "country")
 @Data
+@EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
 @NoArgsConstructor
 public class Country extends Base implements Serializable {
