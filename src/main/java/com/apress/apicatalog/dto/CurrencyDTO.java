@@ -13,6 +13,8 @@ public class CurrencyDTO {
 
     private String code;
 
+    private String symbol;
+
     private String description;
 
     private Boolean enable;

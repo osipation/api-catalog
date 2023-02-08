@@ -16,6 +16,8 @@ public class Currency extends Base implements Serializable {
 
     private String code;
 
+    private String symbol;
+
     private String description;
 
     private Boolean enabled;
