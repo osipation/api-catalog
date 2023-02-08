@@ -36,9 +36,6 @@ public class Country extends Base implements Serializable {
     @OrderBy(value = "name")
     private List<State> state;
 
-    @Embedded
-    private Audit audit;
-
 //    @Enumerated(EnumType.STRING)
 //    private Continent continent;
 

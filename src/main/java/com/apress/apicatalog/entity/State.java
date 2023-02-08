@@ -26,6 +26,4 @@ public class State extends Base implements Serializable {
     @JoinColumn(name = "country_id", nullable = false, updatable = false, insertable = false)
     private Country country;
 
-    @Embedded
-    private Audit audit;
 }

@@ -1,6 +1,5 @@
 package com.apress.apicatalog.entity;
 
-import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -22,6 +21,4 @@ public class City extends Base implements Serializable {
 
     private Boolean enabled;
 
-    @Embedded
-    private Audit audit;
 }
