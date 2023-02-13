@@ -2,24 +2,27 @@ package com.apress.apicatalog.service;
 
 import com.apress.apicatalog.ApiMapper;
 import com.apress.apicatalog.dto.CountryDTO;
-import com.apress.apicatalog.dto.CurrencyDTO;
 import com.apress.apicatalog.entity.Country;
-import com.apress.apicatalog.entity.Currency;
+import com.apress.apicatalog.entity.State;
 import com.apress.apicatalog.repository.CountryRepository;
-import com.apress.apicatalog.repository.CurrencyRepository;
+import com.apress.apicatalog.repository.StateRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
 public class CountryService {
 
-    private CountryRepository countryRepository;
+    private final CountryRepository countryRepository;
+    private final StateRepository stateRepository;
 
     @Autowired
-    public CountryService(CountryRepository countryRepository) {
+    public CountryService(CountryRepository countryRepository, StateRepository stateRepository) {
         this.countryRepository = countryRepository;
+        this.stateRepository = stateRepository;
     }
 
     public CountryDTO getById(Long id) {
@@ -41,7 +44,20 @@ public class CountryService {
         return countryDTO;
     }
 
-    public void delete(Long id) {
-        //TODO Auto-generated method stub
+    @Transactional
+    public void delete(Long id) throws InterruptedException{
+        Optional<Country> country = countryRepository.findById(id);
+        List<State> states = stateRepository.findAllByCountryId(id);
+        if (country.isPresent()) {
+            country.get().setEnabled(Boolean.FALSE);
+            countryRepository.save(country.get());
+
+            Thread.sleep(2000L);//for testing isolation problems
+
+            for (State state: states) {
+                state.setEnabled(Boolean.FALSE);
+                stateRepository.save(state);
+            }
+        }
     }
 }
