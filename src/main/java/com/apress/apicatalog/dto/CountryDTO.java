@@ -30,4 +30,6 @@ public class CountryDTO implements Serializable {
 
     private AuditDTO audit;
 
+    private Long version;
+
 }

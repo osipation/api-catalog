@@ -20,4 +20,6 @@ public class CityDTO implements Serializable {
 
     private AuditDTO audit;
 
+    private Long version;
+
 }

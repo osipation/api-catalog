@@ -19,6 +19,9 @@ public abstract class Base {
     @Embedded
     private Audit audit;
 
+    @Version
+    private Long version;
+
     @PrePersist
     public void fillCreatedOn() {
         audit.setCreatedOn(LocalDateTime.now());

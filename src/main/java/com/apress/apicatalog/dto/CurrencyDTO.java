@@ -23,4 +23,6 @@ public class CurrencyDTO {
 
     private AuditDTO audit;
 
+    private Long version;
+
 }

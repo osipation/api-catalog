@@ -23,4 +23,6 @@ public class StateDTO implements Serializable {
 
     private AuditDTO audit;
 
+    private Long version;
+
 }
