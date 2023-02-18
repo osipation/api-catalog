@@ -23,3 +23,12 @@ spring:
     generate-ddl: false
     hibernate:
       ddl-auto: update
+  flyway:
+    flyway:
+      sql-migration-prefix: V
+      sql-migration-separator: __
+      sql-migration-suffixes: .sql
+      locations: classpath:db/migration
+      repeatable-sql-migration-prefix: R
+      baseline-on-migrate: true
+      baseline-version: 0
