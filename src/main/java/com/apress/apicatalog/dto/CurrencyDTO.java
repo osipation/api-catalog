@@ -17,7 +17,7 @@ public class CurrencyDTO {
 
     private String description;
 
-    private Boolean enable;
+    private Boolean enabled;
 
     private Integer decimalPlaces;
 
